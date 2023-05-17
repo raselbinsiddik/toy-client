@@ -1,9 +1,13 @@
+import { Outlet } from "react-router-dom";
+import Main from "./components/Main";
+
 
 
 const App = () => {
   return (
     <div>
-      <h2>hello</h2>
+       <Main></Main>
+      <Outlet></Outlet>
     </div>
   );
 };
