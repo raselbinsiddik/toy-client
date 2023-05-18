@@ -4,7 +4,7 @@ import login from '../assets/login.jpg'
 const Rgister = () => {
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200">
+            <div className="hero min-h-screen bg-base-200 mt-4">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
                         
@@ -45,10 +45,11 @@ const Rgister = () => {
                                 <div className="form-control mt-6">
                                     <button className="btn btn-primary">Sign Up</button>
                                 </div>
-                           </form>
+                            </form>
+                            <p>Already have account? <Link to="/login">Login</Link></p>
                         </div>
                     </div>
-                    <p>Already have account? <Link to="/login">Login</Link></p>
+                    
                 </div>
                 
             </div>

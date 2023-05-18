@@ -3,7 +3,7 @@ import login from '../assets/login.jpg'
 
 const Login = () => {
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-base-200 mt-4">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     
@@ -31,10 +31,10 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
                             </div>
-                       </form>
+                        </form>
+                        <a>Are you new in this site? <Link to="/register">Register</Link></a>
                     </div>
                 </div>
-                <a>Are you new in this site? <Link to="/register">Register</Link></a>
             </div>
             
         </div>
