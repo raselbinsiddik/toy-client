@@ -4,6 +4,7 @@ import car2 from '../assets/car2.jpg'
 import car3 from '../assets/car3.jpg'
 import car4 from '../assets/car4.jpg'
 import Galary from './Galary';
+import SubTabs from './SubTabs';
 
 
 const Home = () => {
@@ -56,6 +57,7 @@ const Home = () => {
                 </div>
             </div>
             <Galary></Galary>
+            <SubTabs></SubTabs>
         </div>
     );
 };
