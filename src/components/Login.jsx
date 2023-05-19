@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 import login from '../assets/login.jpg'
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
+import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn, googleSignIn } = useContext(AuthContext);
+    const [error, setError] = useState();
 
     const handleLogin = event => {
         event.preventDefault();
@@ -12,7 +14,20 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
 
+        setError('');
         signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => {
+                console.log(error);
+                setError(error.message);
+        })
+    }
+
+    const handleGoogle = ()=>{
+        googleSignIn()
             .then(result => {
                 const user = result.user;
                 console.log(user);
@@ -26,7 +41,9 @@ const Login = () => {
         <div className="hero min-h-screen bg-base-200 mt-4">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
-                    
+                    <div className='text-center'>
+                        <button onClick={handleGoogle} className='flex bg-blue-500 p-2 w-full text-xl rounded-xl mb-5 font-bold'><FaGoogle className='text-white mr-3 text-3xl ms-16'></FaGoogle>Google Sign In</button>
+                    </div>
                     <img className='w-96' src={login} alt="" />
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -37,14 +54,14 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="text" name='email' placeholder="email" className="input input-bordered" />
+                                <input type="text" name='email' placeholder="email" className="input input-bordered" required/>
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name='password' placeholder="password" className="input input-bordered" />
-                                
+                                <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+                                <p className='text-red-500'> {error}</p>
                             </div>
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary" type="submit" value="Login" />
