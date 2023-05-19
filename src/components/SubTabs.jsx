@@ -1,15 +1,19 @@
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import fire1 from '../assets/fire1.jpg'
-import fire2 from '../assets/fire2.jpg'
-import racing1 from '../assets/racing1.jpg'
-import racing2 from '../assets/racing2.jpg'
-import police1 from '../assets/police1.jpg'
-import police2 from '../assets/police2.jpg'
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
 
 
 const SubTabs = () => {
+    const [cars, setCars] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/toyCategory')
+            .then(res => res.json())
+            .then(data => setCars(data));
+    },[])
     
     return (
        
@@ -22,96 +26,73 @@ const SubTabs = () => {
                 </TabList>
 
                 <TabPanel>
+                    <h2 className='text-3xl font-bold mt-5 text-center'>Sports car</h2>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 ms-28'>
+                        {
+                            cars.filter(d => d.category =='sports').map(car => <p key={car._id}>
+                                <div className="card card-compact w-96 bg-base-100 shadow-xl mt-4">
+                                    <figure className="px-10 pt-10">
+                                        <img src={car.Picture} alt="Shoes" className="rounded-xl" />
+                                    </figure>
+                                    <div className="card-body items-center text-center">
+                                        <h2 className="card-title">Name: {car.Toy_Name}</h2>
+                                        <p>Rating: {car.Rating}</p>
+                                        <p>Price: {car.Price}</p>
+                                        <div className="card-actions">
+                                            <Link to={`/detail/${car._id}`}><button className="btn btn-primary">View Details</button></Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </p>)
+                        }
+                        
+                       
+                    </div>
+                </TabPanel>
+                <TabPanel>
                     <h2 className='text-3xl font-bold mt-5 text-center'>Mini fire truck</h2>
-                    <div className='grid grid-cols-1 md:grid-cols-2'>
-                        <div className="card w-full bg-base-100 shadow-xl">
-                            <figure className="px-10 pt-10">
-                                <img src={racing1} alt="Shoes" className="rounded-xl" />
-                            </figure>
-                            <div className="card-body items-center text-center">
-                                <h2 className="card-title">Name: Racing Car Red</h2>
-                                <p>Rating: 4.4</p>
-                                <p>Price: $5.9</p>
-                                <div className="card-actions">
-                                    <button className="btn btn-primary">View Details</button>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 ms-16'>
+                        {
+                            cars.filter(d => d.category == 'fire truck').map(car => <p key={car._id}>
+                                <div className="card card-compact w-96 bg-base-100 shadow-xl mt-4">
+                                    <figure className="px-10 pt-10">
+                                        <img src={car.Picture} alt="Shoes" className="rounded-xl" />
+                                    </figure>
+                                    <div className="card-body items-center text-center">
+                                        <h2 className="card-title">Name: {car.Toy_Name }</h2>
+                                        <p>Rating: {car.Rating}</p>
+                                        <p>Price: {car.Price}</p>
+                                        <div className="card-actions">
+                                            <Link to={`/detail/${car._id}`}><button className="btn btn-primary">View Details</button></Link>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="card w-full bg-base-100 shadow-xl">
-                            <figure className="px-10 pt-10">
-                                <img src={racing2} alt="Shoes" className="rounded-xl" />
-                            </figure>
-                            <div className="card-body items-center text-center">
-                                <h2 className="card-title">Name: Racing Car Red</h2>
-                                <p>Rating: 4.5</p>
-                                <p>Price: $3.9</p>
-                                <div className="card-actions">
-                                    <button className="btn btn-primary">View Details</button>
-                                </div>
-                            </div>
-                        </div>
+                            </p>)
+                        }
+
                     </div>
                 </TabPanel>
                 <TabPanel>
                     <h2 className='text-3xl font-bold mt-5 text-center'>Mini police car</h2>
-                    <div className='grid grid-cols-1 md:grid-cols-2'>
-                        <div className="card w-full bg-base-100 shadow-xl">
-                            <figure className="px-10 pt-10">
-                                <img src={fire1} alt="Shoes" className="rounded-xl" />
-                            </figure>
-                            <div className="card-body items-center text-center">
-                                <h2 className="card-title">Name: Racing Car Red</h2>
-                                <p>Rating: 4.4</p>
-                                <p>Price: $5.9</p>
-                                <div className="card-actions">
-                                    <button className="btn btn-primary">View Details</button>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 ms-16'>
+                        {
+                            cars.filter(d => d.category == 'plice').map(car => <p key={car._id}>
+                                <div className="card card-compact w-96 bg-base-100 shadow-xl mt-4">
+                                    <figure className="px-10 pt-10">
+                                        <img src={car.Picture} alt="Shoes" className="rounded-xl" />
+                                    </figure>
+                                    <div className="card-body items-center text-center">
+                                        <h2 className="card-title">Name: {car.Toy_Name}</h2>
+                                        <p>Rating: {car.Rating}</p>
+                                        <p>Price: {car.Price}</p>
+                                        <div className="card-actions">
+                                            <Link to={`/detail/${car._id}`}><button className="btn btn-primary">View Details</button></Link>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="card w-full bg-base-100 shadow-xl">
-                            <figure className="px-10 pt-10">
-                                <img src={fire2} alt="Shoes" className="rounded-xl" />
-                            </figure>
-                            <div className="card-body items-center text-center">
-                                <h2 className="card-title">Name: Racing Car Red</h2>
-                                <p>Rating: 4.5</p>
-                                <p>Price: $3.9</p>
-                                <div className="card-actions">
-                                    <button className="btn btn-primary">View Details</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </TabPanel>
-                <TabPanel>
-                    <h2 className='text-3xl font-bold mt-5 text-center'>Sports car</h2>
-                    <div className='grid grid-cols-1 md:grid-cols-2'>
-                        <div className="card w-full bg-base-100 shadow-xl">
-                            <figure className="px-10 pt-10">
-                                <img src={police1} alt="Shoes" className="rounded-xl" />
-                            </figure>
-                            <div className="card-body items-center text-center">
-                                <h2 className="card-title">Name: Racing Car Red</h2>
-                                <p>Rating: 4.4</p>
-                                <p>Price: $5.9</p>
-                                <div className="card-actions">
-                                    <button className="btn btn-primary">View Details</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="card w-full bg-base-100 shadow-xl">
-                            <figure className="px-10 pt-10">
-                                <img src={police2} alt="Shoes" className="rounded-xl" />
-                            </figure>
-                            <div className="card-body items-center text-center">
-                                <h2 className="card-title">Name: Racing Car Red</h2>
-                                <p>Rating: 4.5</p>
-                                <p>Price: $3.9</p>
-                                <div className="card-actions">
-                                    <button className="btn btn-primary">View Details</button>
-                                </div>
-                            </div>
-                        </div>
+                            </p>)
+                        }
+
                     </div>
                 </TabPanel>
             </Tabs> 

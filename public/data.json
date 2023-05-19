@@ -1,49 +1,69 @@
 [
   {
-    "_id": "12345",
-    "Picture1": "https://images.unsplash.com/photo-1672467575273-2918d93d00ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG95JTIwc3BvcnRzJTIwY2FyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-    "Picture2": "https://media.istockphoto.com/id/183766095/photo/old-race-cars-that-were-fun-for-about-5-mins.jpg?b=1&s=170667a&w=0&k=20&c=JOcY1hYLihRORELvqnYmQzIA5_dU_wH4oj9YAKCohzU=",
-    "Name1": "Super sports car racing",
-    "Name2": "Super sports car racing",
+    "Picture": "https://images.unsplash.com/photo-1672467575273-2918d93d00ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG95JTIwc3BvcnRzJTIwY2FyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+    "Toy_Name": "Super sports car racing",
+    "Seller_name":"Ajharul",
+    "Seller_email":"ajha@gmail.com",
+    "available_quantity":20,
+    "detail_description":"Our toys are very beautifull and very useful for the children",
     "Price": 19.99,
-    "Rating": 4.5
+    "Rating": 4.5,
+    "category":"sports"
+
   },
   {
-    "_id": "67890",
-    "Picture1": "https://media.istockphoto.com/id/172948516/photo/waiting-at-the-pump.jpg?b=1&s=170667a&w=0&k=20&c=iY2H8IhB9N28N-HzpN76bLIiXLqZUIUUXBJaUa89Xe4=",
-    "Picture2": "https://media.istockphoto.com/id/1292383616/photo/perpetual-calendar-and-toy-car-with-gifts.jpg?b=1&s=170667a&w=0&k=20&c=CfyRtsuuokWMRMEUKhTPXGcS1v0msy1KIgQ8WLS6Uxo=",
-    "Name1": "Mini Regular Car",
-    "Name2": "Mini Regular Car",
+    "Picture": "https://media.istockphoto.com/id/172948516/photo/waiting-at-the-pump.jpg?b=1&s=170667a&w=0&k=20&c=iY2H8IhB9N28N-HzpN76bLIiXLqZUIUUXBJaUa89Xe4=",
+    "Toy_Name": "Mini police Car",
+     "Seller_name":"Ajharul",
+    "Seller_email":"ajha@gmail.com",
+    "available_quantity":20,
+    "detail_description":"Our toys are very beautifull and very useful for the children",
     "Price": 29.99,
-    "Rating": 4.2
+    "Rating": 4.2,
+    "category":"plice"
   },
   {
-    "_id": "54321",
-    "Picture1": "https://media.istockphoto.com/id/1416888017/photo/little-model-fire-brigade-car-isolated-on-white-background.jpg?b=1&s=170667a&w=0&k=20&c=tS3dSOz6ksyZ64oA7g4_5_o_aul-9AKA2H2405addus=",
-    "Picture2": "https://images.unsplash.com/photo-1632435188816-1277a374e696?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dG95JTIwbWluaSUyMGZpcmUlMjB0cnVja3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
-    "Name": "Plush Teddy Bear",
+    "Picture": "https://media.istockphoto.com/id/1416888017/photo/little-model-fire-brigade-car-isolated-on-white-background.jpg?b=1&s=170667a&w=0&k=20&c=tS3dSOz6ksyZ64oA7g4_5_o_aul-9AKA2H2405addus=",
+    "Toy_Name": "Super Fire Truck",
+     "Seller_name":"Ajharul",
+    "Seller_email":"ajha@gmail.com",
+    "available_quantity":20,
+    "detail_description":"Our toys are very beautifull and very useful for the children",
     "Price": 14.99,
-    "Rating": 4.8
+    "Rating": 4.8,
+    "category":"fire truck"
   },
   {
-    "_id": "98765",
-    "Picture": "https://example.com/toy4-picture.jpg",
-    "Name": "Remote Control Car",
+    "Picture": "https://media.istockphoto.com/id/183766095/photo/old-race-cars-that-were-fun-for-about-5-mins.jpg?b=1&s=170667a&w=0&k=20&c=JOcY1hYLihRORELvqnYmQzIA5_dU_wH4oj9YAKCohzU=",
+    "Toy_Name": "Remote Control Racing Car ",
+     "Seller_name":"Ajharul",
+    "Seller_email":"ajha@gmail.com",
+    "available_quantity":20,
+    "detail_description":"Our toys are very beautifull and very useful for the children",
     "Price": 39.99,
-    "Rating": 4.3
+    "Rating": 4.3,
+    "category":"sports"
   },
   {
-    "_id": "24680",
-    "Picture": "https://example.com/toy5-picture.jpg",
-    "Name": "Dollhouse Playset",
+    "Picture": "https://media.istockphoto.com/id/1292383616/photo/perpetual-calendar-and-toy-car-with-gifts.jpg?b=1&s=170667a&w=0&k=20&c=CfyRtsuuokWMRMEUKhTPXGcS1v0msy1KIgQ8WLS6Uxo=",
+    "Toy_Name": "Mini Police Car",
+     "Seller_name":"Ajharul",
+    "Seller_email":"ajha@gmail.com",
+    "available_quantity":20,
+    "detail_description":"Our toys are very beautifull and very useful for the children",
     "Price": 49.99,
-    "Rating": 4.6
+    "Rating": 4.6,
+    "category":"plice"
   },
   {
-    "_id": "13579",
-    "Picture": "https://example.com/toy6-picture.jpg",
-    "Name": "Educational Puzzle Set",
+    "Picture": "https://images.unsplash.com/photo-1632435188816-1277a374e696?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dG95JTIwbWluaSUyMGZpcmUlMjB0cnVja3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    "Toy_Name": "Mini Fire Truck",
+     "Seller_name":"Ajharul",
+    "Seller_email":"ajha@gmail.com",
+    "available_quantity":20,
+    "detail_description":"Our toys are very beautifull and very useful for the children",
     "Price": 24.99,
-    "Rating": 4.4
+    "Rating": 4.4,
+    "category":"fire truck"
   }
 ]
