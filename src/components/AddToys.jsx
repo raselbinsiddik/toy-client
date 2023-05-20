@@ -1,6 +1,9 @@
-
+import { useContext } from 'react';
+import Swal from 'sweetalert2'
+import {AuthContext} from '../Provider/AuthProvider'
 
 const AddToys = () => {
+    const { user } = useContext(AuthContext);
 
     const handleAddAToys = event => {
         event.preventDefault();
@@ -12,7 +15,7 @@ const AddToys = () => {
         const photo = form.photo.value;
         const rating = form.rating.value;
         const quantity = form.quantity.value;
-        const email = form.email.value;
+        const email = user?.email;
         const description = form.description.value;
         const category = form.category.value;
 
@@ -29,7 +32,15 @@ const AddToys = () => {
         })
             .then(res => res.json())
             .then(data => {
-            console.log(data);
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'success',
+                        text: 'user added successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
         })
     }
     return (
@@ -46,7 +57,7 @@ const AddToys = () => {
                         <label className="label">
                             <span className="label-text">Seller Name</span>
                         </label>
-                        <input type="text" name='seller' placeholder="seller name" className="input input-bordered" />
+                        <input type="text" name='seller' placeholder="seller name" className="input input-bordered" defaultValue={user?.displayName} />
                     </div>
                     <div className="form-control">
                         <label className="label">
@@ -76,7 +87,7 @@ const AddToys = () => {
                         <label className="label">
                             <span className="label-text">Seller Email</span>
                         </label>
-                        <input type="text" name='email' placeholder="email" className="input input-bordered" />
+                        <input type="text" name='email' placeholder="email" className="input input-bordered" defaultValue={user?.email} />
                     </div>
                     <div className="form-control">
                         <label className="label">
