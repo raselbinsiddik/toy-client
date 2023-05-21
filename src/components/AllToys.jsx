@@ -1,9 +1,14 @@
 import { useLoaderData } from "react-router-dom";
 import ToysRow from "./ToysRow";
+import { useState } from "react";
 
 
 const AllToys = () => {
     const cars = useLoaderData();
+    const [show, setShow] = useState(false);
+    const handleShowAll = () => {
+        setShow(true)
+    }
     return (
         <div className="overflow-x-auto">
             <div className="text-center text-4xl font-bold mt-10 mb-10">
@@ -24,10 +29,12 @@ const AllToys = () => {
                 <tbody>
                     
                         
-                        {cars.map(car => <ToysRow key={car._id}
+                        {cars.slice(0, show ? 50:20).map(car => <ToysRow key={car._id}
                         car={car}>
                         </ToysRow>)}
-                        
+                    {
+                        !show && <button onClick={handleShowAll} className="btn btn-primary ml-32">see more</button> 
+                   }
                        
                 </tbody>
             </table>

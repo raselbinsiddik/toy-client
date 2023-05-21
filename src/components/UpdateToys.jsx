@@ -40,7 +40,8 @@ const UpdateToys = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.modifiedCount > 0 ) {
+
+                if (data.modifiedCount>0) {
                     Swal.fire({
                         title: 'success',
                         text: 'user update successfully',
@@ -51,6 +52,7 @@ const UpdateToys = () => {
             })
     }
     return (
+
         <div className="hero-content flex-col lg:flex-row-reverse m-3 ">
             <form onSubmit={handleUpdateToys}>
                 <div className="grid grid-cols-1 lg:grid-cols-2 font-bold">
