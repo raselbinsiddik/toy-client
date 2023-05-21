@@ -17,7 +17,12 @@ const SubTabs = () => {
     
     return (
        
-        <div className='mt-5 text-center text-2xl font-bold mb-5'>
+        <div className='mt-5 text-center text-xl font-bold mb-5'>
+            <div className='text-center mt-10 mb-10'>
+                <h1 className='text-4xl font-bold mb-5 text-yellow-500'> Kids Cars Category</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur dignissimos consequatur aliquam voluptas sed officia asperiores tenetur quibusdam corporis a. Dicta aliquam ipsum cupiditate quibusdam accusamus doloribus itaque eum dolore?</p>
+
+            </div>
             <Tabs>
                 <TabList>
                     <Tab>Sports car</Tab>
