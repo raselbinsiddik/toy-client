@@ -1,25 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
-  createBrowserRouter,
-  RouterProvider,
+    createBrowserRouter,
+    RouterProvider,
 } from "react-router-dom";
 import App from './App.jsx';
 import Home from './components/Home.jsx';
-import './index.css';
 import Login from './components/Login.jsx';
+import './index.css';
 
-import Rgister from './components/Rgister.jsx';
 import AddToys from './components/AddToys.jsx';
-import ViewDetail from './components/ViewDetail.jsx';
+import AllToys from './components/AllToys.jsx';
 import Blog from './components/Blog.jsx';
 import MyToys from './components/MyToys.jsx';
-import AllToys from './components/AllToys.jsx';
-import AuthProvider from './Provider/AuthProvider.jsx';
-import ToyDetails from './components/ToyDetails.jsx';
-import PrivateRoute from './Private/PrivateRoute.jsx';
-import UpdateToys from './components/UpdateToys.jsx';
 import NotPound from './components/NotPound.jsx';
+import Rgister from './components/Rgister.jsx';
+import ToyDetails from './components/ToyDetails.jsx';
+import UpdateToys from './components/UpdateToys.jsx';
+import ViewDetail from './components/ViewDetail.jsx';
+import PrivateRoute from './Private/PrivateRoute.jsx';
+import AuthProvider from './Provider/AuthProvider.jsx';
 
 
 const router = createBrowserRouter([
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       {
         path: 'detail/:id',
         element: <PrivateRoute><ViewDetail></ViewDetail></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://the-toy-server1.vercel.app/toyCategory/${params.id}`)
+        loader: ({ params }) => fetch(`https://b7a11-toy-marketplace-server-side-raselbinsiddik.vercel.app/toyCategory/${params.id}`)
         
       },
       {
@@ -61,17 +61,17 @@ const router = createBrowserRouter([
       {
         path: 'allToys',
         element: <AllToys></AllToys>,
-        loader: () => fetch('https://the-toy-server1.vercel.app/addToys')
+        loader: () => fetch('https://b7a11-toy-marketplace-server-side-raselbinsiddik.vercel.app/addToys')
       },
       {
         path: 'toy/:id',
         element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://the-toy-server1.vercel.app/addToys/${params.id}`)
+        loader: ({ params }) => fetch(`https://b7a11-toy-marketplace-server-side-raselbinsiddik.vercel.app/addToys/${params.id}`)
       },
       {
         path: 'update/:id',
         element: <UpdateToys></UpdateToys>,
-        loader: ({ params }) => fetch(`https://the-toy-server1.vercel.app/addToys/${params.id}`)
+        loader: ({ params }) => fetch(`https://b7a11-toy-marketplace-server-side-raselbinsiddik.vercel.app/addToys/${params.id}`)
       }
       
     ]

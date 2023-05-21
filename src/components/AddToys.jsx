@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import Swal from 'sweetalert2'
-import {AuthContext} from '../Provider/AuthProvider'
+import Swal from 'sweetalert2';
+import { AuthContext } from '../Provider/AuthProvider';
 import useTitle from '../hooks/useTitle';
 
 const AddToys = () => {
@@ -25,7 +25,7 @@ const AddToys = () => {
 
         console.log(addToys);
 
-        fetch('https://the-toy-server1.vercel.app/addToys', {
+        fetch('https://b7a11-toy-marketplace-server-side-raselbinsiddik.vercel.app/addToys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

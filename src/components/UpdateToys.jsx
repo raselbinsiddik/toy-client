@@ -1,7 +1,7 @@
 import { useContext } from "react";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
-import { useLoaderData } from "react-router-dom";
 
 
 const UpdateToys = () => {
@@ -30,7 +30,7 @@ const UpdateToys = () => {
 
         console.log(updateToys);
 
-        fetch(`https://the-toy-client.web.app/addToys/${_id}`, {
+        fetch(`https://b7a11-toy-marketplace-server-side-raselbinsiddik.vercel.app/addToys/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -41,7 +41,7 @@ const UpdateToys = () => {
             .then(data => {
                 console.log(data);
 
-                if (data.modifiedCount>0) {
+                if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'success',
                         text: 'user update successfully',

@@ -1,8 +1,8 @@
 
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 
 
@@ -10,7 +10,7 @@ const SubTabs = () => {
     const [cars, setCars] = useState([]);
 
     useEffect(() => {
-        fetch('https://the-toy-server1.vercel.app/toyCategory')
+        fetch('https://b7a11-toy-marketplace-server-side-raselbinsiddik.vercel.app/toyCategory')
             .then(res => res.json())
             .then(data => setCars(data));
     },[])
