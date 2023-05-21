@@ -1,9 +1,14 @@
+
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const ToyDetails = () => {
+   
     const view = useLoaderData();
-    const { name, price, seller, quantity, category, photo, rating, description, email} = view;
+    const { _id, name, price, seller, quantity, category, photo, rating, description, email } = view;
+   
+   
    
     return (
             <div className="mb-16">
@@ -23,7 +28,8 @@ const ToyDetails = () => {
                     <p>Detail description: {description}</p>
                     
                         <p>Sub category: {category}</p>
-                    </div>
+                </div>
+              
 
                 </div>
             </div>

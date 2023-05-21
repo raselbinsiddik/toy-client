@@ -25,6 +25,8 @@ const MyToys = () => {
                 toys.map(toy => <MytoysRow
                     key={toy._id}
                     toy={toy}
+                    toys={toys}
+                    setToys={setToys}
                 ></MytoysRow>)
             }
         </div>
