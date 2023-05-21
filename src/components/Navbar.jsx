@@ -24,7 +24,9 @@ const Navbar = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><a><Link to="/">Home</Link></a></li>
-                        <li><a><Link to="/addToys">Add a toy</Link></a></li>
+                        {
+                            user ? <li><a><Link to="/addToys">Add a toy</Link></a></li>:''
+                        }
                         {
                             user ? <li><a><Link to="/myToys">My Toys</Link></a></li> :''
                        }
@@ -49,7 +51,9 @@ const Navbar = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <li><a><Link to="/">Home</Link></a></li>
-                    <li><a><Link to="/addToys">Add a toy</Link></a></li>
+                    {
+                        user ? <li><a><Link to="/addToys">Add a toy</Link></a></li> : ''
+                    }
                     {
                         user ? <li><a><Link to="/myToys">My Toys</Link></a></li> : ''
                     }

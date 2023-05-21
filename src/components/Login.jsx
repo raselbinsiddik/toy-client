@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import login from '../assets/login.jpg'
 import { useContext, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
@@ -6,7 +6,10 @@ import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
     const { signIn, googleSignIn } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
     const [error, setError] = useState();
+    const from = location.state?.pathname || '/';
 
     const handleLogin = event => {
         event.preventDefault();
@@ -19,6 +22,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.log(error);

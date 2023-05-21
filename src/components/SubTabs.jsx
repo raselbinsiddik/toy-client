@@ -10,7 +10,7 @@ const SubTabs = () => {
     const [cars, setCars] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/toyCategory')
+        fetch('https://the-toy-server1.vercel.app/toyCategory')
             .then(res => res.json())
             .then(data => setCars(data));
     },[])

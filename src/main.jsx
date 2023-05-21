@@ -19,6 +19,7 @@ import AuthProvider from './Provider/AuthProvider.jsx';
 import ToyDetails from './components/ToyDetails.jsx';
 import PrivateRoute from './Private/PrivateRoute.jsx';
 import UpdateToys from './components/UpdateToys.jsx';
+import NotPound from './components/NotPound.jsx';
 
 
 const router = createBrowserRouter([
@@ -44,8 +45,8 @@ const router = createBrowserRouter([
       },
       {
         path: 'detail/:id',
-        element: <ViewDetail></ViewDetail>,
-        loader: ({ params }) => fetch(`http://localhost:5000/toyCategory/${params.id}`)
+        element: <PrivateRoute><ViewDetail></ViewDetail></PrivateRoute>,
+        loader: ({ params }) => fetch(`https://the-toy-server1.vercel.app/toyCategory/${params.id}`)
         
       },
       {
@@ -60,21 +61,25 @@ const router = createBrowserRouter([
       {
         path: 'allToys',
         element: <AllToys></AllToys>,
-        loader: () => fetch('http://localhost:5000/addToys')
+        loader: () => fetch('https://the-toy-server1.vercel.app/addToys')
       },
       {
         path: 'toy/:id',
-        element: <ToyDetails></ToyDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/addToys/${params.id}`)
+        element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
+        loader: ({ params }) => fetch(`https://the-toy-server1.vercel.app/addToys/${params.id}`)
       },
       {
         path: 'update/:id',
         element: <UpdateToys></UpdateToys>,
-        loader: ({ params }) => fetch(`http://localhost:5000/addToys/${params.id}`)
+        loader: ({ params }) => fetch(`https://the-toy-server1.vercel.app/addToys/${params.id}`)
       }
       
     ]
   },
+  {
+    path: '*',
+    element:<NotPound></NotPound>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
