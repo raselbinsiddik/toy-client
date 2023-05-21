@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 
 
-const ToysRow = ({ car }) => {
+const ToysRow = ({ car, index }) => {
     const {_id, name, price, seller,quantity,category } = car;
    
     return (
         <tr className="text-xl font-bold">
+            <td>{index}</td>
             <td>{name}</td>
             <td>{seller}</td>
             <td>{price}</td>

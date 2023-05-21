@@ -18,6 +18,7 @@ const AllToys = () => {
                 {/* head */}
                 <thead>
                     <tr>
+                        <th></th>
                         <th>Toy Name</th>
                         <th>Seller Name</th>
                         <th>price</th>
@@ -29,8 +30,9 @@ const AllToys = () => {
                 <tbody>
                     
                         
-                        {cars.slice(0, show ? 50:20).map(car => <ToysRow key={car._id}
-                        car={car}>
+                        {cars.slice(0, show ? 50:20).map((car,index) => <ToysRow key={car._id}
+                            car={car}
+                        index={index}>
                         </ToysRow>)}
                     {
                         !show && <button onClick={handleShowAll} className="btn btn-primary ml-32">see more</button> 
