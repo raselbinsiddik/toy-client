@@ -2,10 +2,12 @@ import { Link } from 'react-router-dom';
 import login from '../assets/login.jpg'
 import { useContext, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
+import useTitle from '../hooks/useTitle';
 
 const Rgister = () => {
     const { createUser } = useContext(AuthContext);
     const [error, setError] = useState();
+    useTitle('Register');
 
     const handleSignIn = event => {
         event.preventDefault();

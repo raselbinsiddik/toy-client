@@ -3,6 +3,7 @@ import car1 from '../assets/car1.jpg'
 import car2 from '../assets/car2.jpg'
 import car3 from '../assets/car3.jpg'
 import car4 from '../assets/car4.jpg'
+import useTitle from '../hooks/useTitle';
 import Extra from './Extra';
 import ExtraSection from './ExtraSection';
 import Galary from './Galary';
@@ -10,6 +11,7 @@ import SubTabs from './SubTabs';
 
 
 const Home = () => {
+    useTitle('home')
     return (
         <div>
             <div className="carousel w-full h-[600px] mt-4 mb-5 rounded-xl">

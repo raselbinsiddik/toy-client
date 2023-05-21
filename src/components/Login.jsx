@@ -3,6 +3,7 @@ import login from '../assets/login.jpg'
 import { useContext, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import { FaGoogle } from "react-icons/fa";
+import useTitle from '../hooks/useTitle';
 
 const Login = () => {
     const { signIn, googleSignIn } = useContext(AuthContext);
@@ -10,6 +11,7 @@ const Login = () => {
     const navigate = useNavigate();
     const [error, setError] = useState();
     const from = location.state?.pathname || '/';
+    useTitle('login')
 
     const handleLogin = event => {
         event.preventDefault();
