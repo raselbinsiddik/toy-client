@@ -6,7 +6,7 @@ const ToysRow = ({ car, index }) => {
    
     return (
         <tr className="text-xl font-bold">
-            <td>{index}</td>
+            <td>{index + 1}</td>
             <td>{name}</td>
             <td>{seller}</td>
             <td>{price}</td>
