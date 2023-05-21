@@ -19,7 +19,7 @@ const MytoysRow = ({ toy,toys, setToys }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/addToys/${_id}`, {
+                fetch(`https://b7a11-toy-marketplace-server-side-raselbinsiddik.vercel.app/addToys/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
