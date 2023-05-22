@@ -1,21 +1,31 @@
-import { useLoaderData } from "react-router-dom";
+
 import ToysRow from "./ToysRow";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useTitle from "../hooks/useTitle";
 
 
 const AllToys = () => {
     const [show, setShow] = useState(false);
+    const [search, setSearch] = useState('');
+    useTitle('allToys');
+    const searchRef = useRef(null);
     const [cars, setCars] = useState([]);
-    useTitle('allToys')
+
+   
 
     useEffect(() => {
-        setCars(useLoaderData);
+        fetch(`https://b7a11-toy-marketplace-server-side-raselbinsiddik.vercel.app/addToys?search=${search}`)
+            .then(res => res.json())
+            .then(data => setCars(data));
 
-    }, []);
-    const handleSearch = (key) => {
-        console.log(key)
+    }, [search]);
+
+    const handleSearch = () => {
+        console.log(searchRef.current.value)
+        setSearch(searchRef.current.value);
     }
+
+
     const handleShowAll = () => {
         setShow(true)
     }
@@ -26,8 +36,13 @@ const AllToys = () => {
 
                 <div>
                     <h1 className="text-center text-4xl font-bold mt-10 mb-10"> All of your add toys in here</h1>
-                    <div className="w-96 mx-auto mb-10 flex">
-                        <input className="w-96 p-3 border-2" type="search" name="name" id="" placeholder="search your toys" /><button onClick={handleSearch} className="btn btn-primary">click</button>
+                    <div className="form-control">
+                        <div className="input-group">
+                            <input type="text" ref={searchRef} placeholder="Search…" className="input input-bordered" />
+                            <button onClick={handleSearch} className="btn btn-square">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <table className="table w-full">

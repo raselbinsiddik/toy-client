@@ -7,7 +7,7 @@ import MytoysRow from "./MytoysRow";
 const MyToys = () => {
     const { user } = useContext(AuthContext);
     const [toys, setToys] = useState([]);
-    useTitle('myToys')
+    useTitle('myToys');
 
     const url = `https://b7a11-toy-marketplace-server-side-raselbinsiddik.vercel.app/addToys?email=${user?.email}`;
 
