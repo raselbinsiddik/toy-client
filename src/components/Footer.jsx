@@ -8,7 +8,7 @@ const Footer = () => {
                 <h1>We are all reserved &copy;Copyright</h1>
                 <h2>Please Contact with us</h2>
             </div>
-            <div className="flex justify-center text-red-500 text-3xl m-3">
+            <div className="flex justify-center text-red-500 text-3xl">
                 <MdToys className="mr-10"></MdToys>
                 <FaYoutube></FaYoutube>
                 <FaInstagram className="mr-2 ml-2"></FaInstagram>

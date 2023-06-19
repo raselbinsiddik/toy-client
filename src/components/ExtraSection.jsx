@@ -10,7 +10,7 @@ const ExtraSection = () => {
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis iusto, voluptas placeat doloremque quasi, in, facilis pariatur quis inventore adipisci tenetur aliquid illum odit maxime! Vel fugit autem facere doloribus.</p>
             </div>
             <div>
-                <div className='grid grid:cols-1 md:grid-cols-2 lg:grid-cols-3 ms-16'>
+                <div className='grid grid:cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto'>
                     <div className="card card-compact w-96 bg-base-100 shadow-xl mt-4">
                         <figure><img src={car1} alt="Shoes" /></figure>
                         <div className="card-body">
