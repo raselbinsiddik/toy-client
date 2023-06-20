@@ -11,9 +11,6 @@ const AllToys = () => {
     const searchRef = useRef(null);
     const [cars, setCars] = useState([]);
 
-    // https://b7a11-toy-marketplace-server-side-raselbinsiddik.vercel.app
-    
-   // https://b7a11-toy-marketplace-server-side-raselbinsiddik.vercel.app
 
     useEffect(() => {
         fetch(`http://localhost:5000/addToys?search=${search}`)

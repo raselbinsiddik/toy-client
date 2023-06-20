@@ -12,7 +12,7 @@ const Galary = () => {
                 <h1 className='text-4xl font-bold mb-4'>Our Toys for Kids</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam odio sit voluptate cum eum dicta earum sequi doloremque, praesentium alias voluptatem ipsum est delectus. Voluptatibus laborum nam qui adipisci cum?</p>
             </div>
-            <div className='grid grid:cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto w-11/12 mt-4'>
+            <div className='grid grid:cols-1 md:grid-cols-2 lg:grid-cols-3 w-11/12 mt-4 mx-auto'>
                 <div className="card card-compact w-96 bg-base-100 shadow-xl mt-4">
                     <figure><img src={ban1} alt="Shoes" /></figure>
                     <div className="card-body">

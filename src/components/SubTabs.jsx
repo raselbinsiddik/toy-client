@@ -10,14 +10,14 @@ const SubTabs = () => {
     const [cars, setCars] = useState([]);
 
     useEffect(() => {
-        fetch('https://b7a11-toy-marketplace-server-side-raselbinsiddik.vercel.app/toyCategory')
+        fetch('https://the-toy-server1.vercel.app/toyCategory')
             .then(res => res.json())
             .then(data => setCars(data));
     },[])
     
     return (
        
-        <div className='mt-5 text-center text-xl font-bold mb-5 mx-auto'>
+        <div className='mt-5 text-center text-xl font-bold mb-5 '>
             <div className='text-center mt-10 mb-10'>
                 <h1 className='text-4xl font-bold mb-5 text-yellow-500'> Kids Cars Category</h1>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur dignissimos consequatur aliquam voluptas sed officia asperiores tenetur quibusdam corporis a. Dicta aliquam ipsum cupiditate quibusdam accusamus doloribus itaque eum dolore?</p>

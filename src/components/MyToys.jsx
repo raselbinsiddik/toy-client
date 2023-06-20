@@ -9,7 +9,7 @@ const MyToys = () => {
     const [toys, setToys] = useState([]);
     useTitle('myToys');
 
-    const url = `https://b7a11-toy-marketplace-server-side-raselbinsiddik.vercel.app/addToys?email=${user?.email}`;
+    const url = `https://the-toy-server1.vercel.app/addToys?email=${user?.email}`;
 
     useEffect(() => {
         fetch(url)
