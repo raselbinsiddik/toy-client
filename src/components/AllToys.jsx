@@ -13,7 +13,7 @@ const AllToys = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/addToys?search=${search}`)
+        fetch(`https://the-toy-server1.vercel.app/addToys?search=${search}`)
             .then(res => res.json())
             .then(data => setCars(data));
 
